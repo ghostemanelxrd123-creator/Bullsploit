@@ -1,7 +1,7 @@
 
 # BullSploit Framework
 https://img.shields.io/badge/python-3.10%2B-blue
-Nano Banana: https://img.shields.io/badge/license-MIT-green
+https://img.shields.io/badge/license-MIT-green
 https://img.shields.io/badge/category-Security-red
 BullSploit is a modular, high-performance penetration testing ecosystem designed for automated network reconnaissance and security research. The framework provides a robust environment for developing, managing, and executing security-centric modules.
 
@@ -24,16 +24,16 @@ The framework requires an isolated Python environment. An automated deployment s
  Automated Setup
 # Clone the repository
 git clone https://github.com/ghostemanelxrd123-creator/BullSploit.git
-cd 'Bulls
+cd 'Bullsploit-1.0'
+
 
 # Execute the deployment script
 chmod +x Setup.sh
 ./Setup.sh
 
 
- Manual Launch
-source venv/bin/activate
-python3 BullSploit_Reborn.py
+# Manual Launch
+sudo BullsploitFramework.py
 
 
  📋 Development Roadmap
@@ -49,6 +49,6 @@ This software is intended for authorized security auditing and educational purpo
 
  📝 Information
 
-•   Lead Developer: Dmitry (Rapid)
-•   Language: Python 3.x
+•   Lead Developer: Rapid
+•   Language: Python 3.13
 •   License: [MIT License](LICENSE)
