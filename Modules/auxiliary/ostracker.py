@@ -16,10 +16,12 @@ def depargs():
     return {
         "host": "IPv4 addr"
     }
+
 #imports
 from scapy.all import IP, ICMP, sr1
 from StrFuncs import evnt, err, timenow
 from colorama import Fore, Style
+
 #main function
 def main(ip):
     packet = IP(dst=ip)/ICMP()
@@ -30,11 +32,11 @@ def main(ip):
         if ttl <= 128: return "Windows"
         if ttl <= 255: return "Cisco/Network Device"
     return "unknown"
+
 #launch func
 def launch(args):
     target = args.get("host")
     print(f"{evnt()} Starting scan on {Fore.CYAN}{target}{Style.RESET_ALL} at {Fore.GREEN}{timenow()}{Style.RESET_ALL}")
     os = main(target)
     if os:
-        print(f" Results for {target}:")
         print(" OS:", os)

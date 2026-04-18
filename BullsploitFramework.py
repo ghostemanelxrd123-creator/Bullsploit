@@ -5,8 +5,6 @@ ver = 1.0
 from colorama import *
 init()
 from StrFuncs import err, evnt, timenow
-import asyncio 
-import socket
 import ast
 import os
 import sys
@@ -99,7 +97,6 @@ def check():
     
 
 def mainmenu(payloadc, auxiliaryc, postc):
-    os.system("title Bullsploit Framework")
     print(red(f"""
        ,/         \\,
       ((__,-'''-,__))
@@ -206,10 +203,8 @@ class BSC:
             if not filtered:
                 print(f"{err()} Not found modules for type: {mtype}")
                 return
-            print()
-            print(f"  {evnt()}Founded modules {len(filtered)}")
-            print(" ", "="*21)
-            print()
+            print(f"\n  {evnt()}Founded modules {len(filtered)}")
+            print(" ", "="*21, "\n")
             print("    #  Name                           Date         Rank      Description")
             print("  ", "-"*80)
             for cnt, mod in enumerate(filtered):

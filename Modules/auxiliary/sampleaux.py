@@ -18,6 +18,7 @@ def depargs():
         "range": "Port diapasone",
         "threads": "Number of threads"
     }
+
 #imports
 from StrFuncs import evnt, err, timenow
 import socket
@@ -39,6 +40,7 @@ def main(ip, port, semaphore, services):
             s.close()
         except:
             pass
+        
 #launch func
 def launch(args):
     try:
