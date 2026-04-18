@@ -2,7 +2,7 @@
 # BullSploit Framework
 
 ![Python](https://shields.io)
-![License](https://shields.io)
+![License]([https://shields.io](https://img.shields.io/badge/category-Security-red))
 ![Category](https://shields.io)
 
 BullSploit is a modular, high-performance penetration testing ecosystem designed for automated network reconnaissance and security research. The framework provides a robust environment for developing, managing, and executing security-centric modules.
