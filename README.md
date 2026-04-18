@@ -28,6 +28,7 @@ git clone https://github.com/ghostemanelxrd123-creator/BullSploit.git
 
 # Execute the deployment script
 chmod +x Setup.sh
+
 ./Setup.sh
 
 
