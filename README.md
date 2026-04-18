@@ -1,10 +1,9 @@
 
-```
 # BullSploit Framework
-[18.04.2026 19:16] ChatGPT | Nano Banana: https://img.shields.io/badge/python-3.10%2B-blue
-[18.04.2026 19:16] ChatGPT | Nano Banana: https://img.shields.io/badge/license-MIT-green
-[18.04.2026 19:16] ChatGPT | Nano Banana: https://img.shields.io/badge/category-Security-red
-[18.04.2026 19:16] ChatGPT | Nano Banana: BullSploit is a modular, high-performance penetration testing ecosystem designed for automated network reconnaissance and security research. The framework provides a robust environment for developing, managing, and executing security-centric modules.
+https://img.shields.io/badge/python-3.10%2B-blue
+Nano Banana: https://img.shields.io/badge/license-MIT-green
+https://img.shields.io/badge/category-Security-red
+BullSploit is a modular, high-performance penetration testing ecosystem designed for automated network reconnaissance and security research. The framework provides a robust environment for developing, managing, and executing security-centric modules.
 
  🏗 Technical Architecture
 
@@ -18,14 +17,14 @@ The framework is built upon a modular micro-kernel design, prioritizing scalabil
  📂 Module Classification
 
 Functional units are categorized into three distinct domains:
-[18.04.2026 19:16] ChatGPT | Nano Banana: ## 🛠 Installation & Deployment
+## 🛠 Installation & Deployment
 
 The framework requires an isolated Python environment. An automated deployment script is provided for Linux-based systems.
 
  Automated Setup
 # Clone the repository
 git clone https://github.com/ghostemanelxrd123-creator/BullSploit.git
-cd BullSploit
+cd 'Bulls
 
 # Execute the deployment script
 chmod +x Setup.sh
@@ -53,4 +52,3 @@ This software is intended for authorized security auditing and educational purpo
 •   Lead Developer: Dmitry (Rapid)
 •   Language: Python 3.x
 •   License: [MIT License](LICENSE)
-```
