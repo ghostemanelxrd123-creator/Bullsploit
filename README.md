@@ -23,7 +23,6 @@ The framework requires an isolated Python environment. An automated deployment s
  Automated Setup
 # Clone the repository
 git clone https://github.com/ghostemanelxrd123-creator/BullSploit.git
-cd 'Bullsploit-1.0'
 
 
 # Execute the deployment script
