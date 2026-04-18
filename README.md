@@ -1,9 +1,6 @@
 
 # BullSploit Framework
 
-[
-https://img.shields.io/badge/category-Security-red.svg
-]
 
 BullSploit is a modular, high-performance penetration testing ecosystem designed for automated network reconnaissance and security research. The framework provides a robust environment for developing, managing, and executing security-centric modules.
 
