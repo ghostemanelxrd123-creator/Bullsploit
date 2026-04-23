@@ -1,7 +1,8 @@
 
 
 # BullSploit Framework
-<img width="365" height="292" alt="Bullsploit_logo" src="https://github.com/user-attachments/assets/03111cdd-64a9-48d4-a6a0-2800f5b6cec5" />
+<img width="1280" height="545" alt="photo_2026-04-18_22-08-25" src="https://github.com/user-attachments/assets/a919b9e7-3e4f-4767-868c-053cd9c0de1d" />
+
 
 BullSploit is a modular, high-performance penetration testing ecosystem designed for automated network reconnaissance and security research. The framework provides a robust environment for developing, managing, and executing security-centric modules.
 
