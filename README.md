@@ -35,12 +35,12 @@ Functional units are categorized into three distinct domains:
 The framework requires an isolated Python environment. An automated deployment script is provided for Linux-based systems.
 
  Automated Setup
-# Clone the repository
+### Clone the repository
 ```
 git clone https://github.com/ghostemanelxrd123-creator/BullSploit.git
 ```
 
-# Execute the deployment script
+### Execute the deployment script
 ```
 chmod +x Setup.sh
 ```
@@ -48,16 +48,16 @@ chmod +x Setup.sh
 ./Setup.sh
 ```
 
-# Manual Launch
+### Manual Launch
 ```
 sudo BullsploitFramework.py
 ```
 
- ⚖️ Legal Disclaimer
+## ⚖️ Legal Disclaimer
 
 This software is intended for authorized security auditing and educational purposes only. The developer assumes no liability for misuse or illicit activity. Unauthorized access to computer systems is illegal and strictly prohibited.
 
- 📝 Information
+## 📝 Information
 
 •   Lead Developer: Rapid
 •   Language: Python 3.13
