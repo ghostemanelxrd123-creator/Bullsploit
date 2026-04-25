@@ -2,18 +2,20 @@
   <h1 align="center">Bullsploit Framework</h1>
 </div>
 
-<div align="center">
-  ![language](https://img.shields.io/badge/python-3.13-blue)
-  ![bullsploit](https://img.shields.io/badge/Bullsploit-Framework-red)
-  ![astparse](https://img.shields.io/badge/Ast-Parse-yellow)
-</div>
+<p align="center">
+  <img src="https://img.shields.io/badge/python-3.13-blue" />
+  <img src="https://img.shields.io/badge/Bullsploit-Framework-red" />
+  <img src="https://img.shields.io/badge/Ast-Parse-yellow" />
+</p>
 
-<img width="1280" height="545" alt="photo_2026-04-18_22-08-25" src="https://github.com/user-attachments/assets/a919b9e7-3e4f-4767-868c-053cd9c0de1d" />
+
+<img width="1188" height="393" alt="photo_2026-04-25_15-35-52" src="https://github.com/user-attachments/assets/41f8e638-69f9-4de2-87f8-243017fbee36" />
+
 
 
 BullSploit is a modular, high-performance penetration testing ecosystem designed for automated network reconnaissance and security research. The framework provides a robust environment for developing, managing, and executing security-centric modules.
 
- 🏗 Technical Architecture
+### 🏗 Technical Architecture
 
 The framework is built upon a modular micro-kernel design, prioritizing scalability and runtime stability.
 
@@ -25,7 +27,7 @@ The framework is built upon a modular micro-kernel design, prioritizing scalabil
 
 •  Unified Argument Parser: A specialized parameter management system providing strict type validation for user-defined inputs.
 
- 📂 Module Classification
+### 📂 Module Classification
 
 Functional units are categorized into three distinct domains:
 ## 🛠 Installation & Deployment
