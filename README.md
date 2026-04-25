@@ -1,7 +1,10 @@
-
-
-# BullSploit Framework
+<div align="center">
+  <img width="140" src="https://user-images.githubusercontent.com/6661165/91657958-61b4fd00-eb00-11ea-9def-dc7ef5367e34.png"  alt="GitHub Profile Trophy"/>
+  <h2 align="center">Bullsploit Framework</h2>
+</div>
+ 
 [![license](https://img.shields.io/github/license/ryo-ma/github-profile-trophy)](https://github.com/ryo-ma/github-profile-trophy/blob/master/LICENSE)
+
 <img width="1280" height="545" alt="photo_2026-04-18_22-08-25" src="https://github.com/user-attachments/assets/a919b9e7-3e4f-4767-868c-053cd9c0de1d" />
 
 
@@ -12,8 +15,11 @@ BullSploit is a modular, high-performance penetration testing ecosystem designed
 The framework is built upon a modular micro-kernel design, prioritizing scalability and runtime stability.
 
 •  Dynamic Module Introspection: Implements importlib for runtime dependency injection and module management.
+
 •  AST-based Validation: Utilizes the Abstract Syntax Tree (AST) library for pre-execution syntax verification, ensuring core stability against malformed module code.
+
 •  Concurrency Engine: Optimized for I/O-bound tasks using the threading library, supporting high-concurrency network operations (3000+ threads).
+
 •  Unified Argument Parser: A specialized parameter management system providing strict type validation for user-defined inputs.
 
  📂 Module Classification
