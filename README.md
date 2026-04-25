@@ -4,6 +4,8 @@
  
 [![license](https://img.shields.io/github/license/ryo-ma/github-profile-trophy)](https://github.com/ryo-ma/github-profile-trophy/blob/master/LICENSE)
 
+![language](https://img.shields.io/badge/python-code-red)
+
 <img width="1280" height="545" alt="photo_2026-04-18_22-08-25" src="https://github.com/user-attachments/assets/a919b9e7-3e4f-4767-868c-053cd9c0de1d" />
 
 
