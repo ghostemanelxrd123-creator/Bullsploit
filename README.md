@@ -24,25 +24,22 @@ The framework requires an isolated Python environment. An automated deployment s
 
  Automated Setup
 # Clone the repository
+```
 git clone https://github.com/ghostemanelxrd123-creator/BullSploit.git
-
+```
 
 # Execute the deployment script
+```
 chmod +x Setup.sh
-
+```
+```
 ./Setup.sh
-
+```
 
 # Manual Launch
+```
 sudo BullsploitFramework.py
-
-
- 📋 Development Roadmap
-
-- [ ] Transition to asynchronous I/O (asyncio) for network-intensive modules.
-- [ ] Integration of ARP and DNS manipulation techniques.
-- [ ] Implementation of a Python-to-Executable (Py2EXE) build system.
-- [ ] Enhancement of the OS fingerprinting signature database.
+```
 
  ⚖️ Legal Disclaimer
 
