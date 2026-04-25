@@ -1,10 +1,12 @@
 <div align="center">
   <h1 align="center">Bullsploit Framework</h1>
 </div>
- 
-![language](https://img.shields.io/badge/python-3.13-blue)
-![bullsploit](https://img.shields.io/badge/Bullsploit-Framework-red)
-![astparse](https://img.shields.io/badge/Ast-Parse-yellow)
+
+<div align="center">
+  ![language](https://img.shields.io/badge/python-3.13-blue)
+  ![bullsploit](https://img.shields.io/badge/Bullsploit-Framework-red)
+  ![astparse](https://img.shields.io/badge/Ast-Parse-yellow)
+</div>
 
 <img width="1280" height="545" alt="photo_2026-04-18_22-08-25" src="https://github.com/user-attachments/assets/a919b9e7-3e4f-4767-868c-053cd9c0de1d" />
 
