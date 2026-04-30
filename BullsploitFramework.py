@@ -12,6 +12,7 @@ import time
 import threading
 import importlib
 from importlib import util
+import subprocess
 
 def turn():
     input("Press any key to continue...")
@@ -45,8 +46,8 @@ def animation():
         animdone.set()
 
 def check():
-    counts = {"payloads": 0, "auxiliary": 0, "post": 0}
-    paths = ["auxiliary", "payloads", "post"]
+    counts = {"payloads": 0, "auxiliary": 0, "post": 0, "builder": 0}
+    paths = ["auxiliary", "payloads", "post", "builder"]
     errlog = []
     threading.Thread(target=animation, daemon=True).start()
     try:
@@ -67,6 +68,8 @@ def check():
                         counts["auxiliary"] += 1
                     elif f"{os.sep}post" in root:
                         counts["post"] += 1
+                    elif f"{os.sep}builder" in root:
+                        counts["builder"] += 1
                     modul = os.path.join(root, file)
                     modulename = file[:-3]
                     try:
@@ -77,12 +80,11 @@ def check():
                     except Exception as f:
                         errlog.append(f"Error in file {file} in {root}")
 
-                    except Exception as j:
-                        pass
 
         payloadc = counts["payloads"]
         auxiliaryc = counts["auxiliary"]
         postc = counts["post"]
+        builderc = counts["builder"]
 
         if errlog:
             stopanim.set()
@@ -91,12 +93,12 @@ def check():
                 print(f"{err()} {r}")
 
         animdone.wait()
-        mainmenu(payloadc, auxiliaryc, postc)
+        mainmenu(payloadc, auxiliaryc, postc, builderc)
     except Exception as l:
-        pass
+        print(f"{err()} {l}")
     
 
-def mainmenu(payloadc, auxiliaryc, postc):
+def mainmenu(payloadc, auxiliaryc, postc, builderc):
     print(red(f"""
        ,/         \\,
       ((__,-'''-,__))
@@ -108,19 +110,20 @@ def mainmenu(payloadc, auxiliaryc, postc):
            `---` {Style.RESET_ALL}"""))
     print(f"""
 +- --=[ {f"{Fore.YELLOW}https://github.com/ghostemanelxrd123-creator{Style.RESET_ALL}":<43} ]-
-+- --=[ {f"{payloadc} payload - {auxiliaryc} auxiliary - {postc} post":<45}]-
++- --=[ {f"{payloadc} payload - {auxiliaryc} auxiliary - {postc} post - {builderc} builders":<45}]-
 """)
-    BSC(payloadc, auxiliaryc, postc)
+    BSC(payloadc, auxiliaryc, postc, builderc)
     
 class BSC:
-    def __init__(self, payload, auxiliary, post):
+    def __init__(self, payload, auxiliary, post, builder):
         self.post = post
         self.payload = payload
         self.aux = auxiliary
+        self.builder = builder
         self.options = {}
         self.selectmod = ""
         self.rank = {"Bad": Fore.RED, "Good": Fore.GREEN, "Normal": Fore.YELLOW, "Excellent": Fore.CYAN}
-        self.folders = ["auxiliary", "payloads", "post"]
+        self.folders = ["auxiliary", "payloads", "post", "builder"]
         self.rules = {}
         self.corrkey = []
         self.modules = []
@@ -297,7 +300,7 @@ Common options:
                     self.rules = m.depargs()
                     
                     for key, value in self.rules.items():
-                        self.corrkey.append(key)
+                        self.corrkey.append(str(key.lower()))
 
 
 
@@ -312,7 +315,7 @@ Common options:
                     
                     newparams = self.parse(args)
                     if not newparams:
-                        print(f"{err()} Usage: set host:8.8.8.8 range:1-1024")
+                        print(f"{err()} Usage: set <key>:<value>")
                     for key, value in newparams.items():
                         if key in self.corrkey:
                             print(f"{evnt()} {key.capitalize()} => {value}")
@@ -327,6 +330,7 @@ Common options:
                         for key, value in self.rules.items():
                             print(f"  {key:<10}     {str(value)}")
                         print()
+
                     
 
                 elif cmd == "show" and self.selectmod is not None:
