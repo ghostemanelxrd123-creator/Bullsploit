@@ -64,11 +64,11 @@ def check():
                 if file.endswith(".py") and file != "__init__.py":
                     if f"{os.sep}payloads" in root:
                         counts["payloads"] += 1
-                    elif f"{os.sep}auxiliary" in root:
+                    if f"{os.sep}auxiliary" in root:
                         counts["auxiliary"] += 1
-                    elif f"{os.sep}post" in root:
+                    if f"{os.sep}post" in root:
                         counts["post"] += 1
-                    elif f"{os.sep}builder" in root:
+                    if f"{os.sep}builder" in root:
                         counts["builder"] += 1
                     modul = os.path.join(root, file)
                     modulename = file[:-3]
@@ -192,7 +192,7 @@ class BSC:
             os.system("cls")
         else:
             os.system("clear")
-        mainmenu(self.payload, self.aux, self.post)
+        mainmenu(self.payload, self.aux, self.post, self.builder)
 
     def table(self, modultype=None):
         try:
@@ -355,7 +355,7 @@ Common options:
         except KeyboardInterrupt:
             choice = input(f"\nAre you sure you want to exit? (y/n)>").lower()
             if choice == "y": sys.exit()
-            else: mainmenu()
+            else: mainmenu(self.payload, self.aux, self.post, self.builder)
         except Exception as h:
             print(f"{err()} {h}")
             turn()

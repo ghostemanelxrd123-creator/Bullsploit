@@ -12,5 +12,6 @@ def err():
 
 def timenow():
     now = datetime.now()
-    nowtime = now.strftime("%H:%M:%S")
+    timee = now.strftime("%H:%M:%S")
+    nowtime = (f"{Fore.YELLOW}[{Fore.WHITE}{timee}{Fore.YELLOW}]{Style.RESET_ALL}")
     return nowtime

