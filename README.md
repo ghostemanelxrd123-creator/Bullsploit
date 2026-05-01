@@ -61,4 +61,4 @@ This software is intended for authorized security auditing and educational purpo
 
 •   Lead Developer: Rapid
 •   Language: Python 3.13
-•   License: [MIT License](LICENSE)
+•   License: [MIT](LICENSE)
