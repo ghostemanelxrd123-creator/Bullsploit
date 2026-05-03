@@ -4,7 +4,7 @@ from datetime import datetime
 
 init()
 
-def evnt():
+def evnt() -> str:
     return f"[{Fore.CYAN}~{Style.RESET_ALL}]"
 
 def err():

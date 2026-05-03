@@ -1,18 +1,18 @@
 
 #basic module description
-def description():
+def description() -> str:
     return "OS fingerprinter"
 
 #basic module rank
-def rank():
+def rank() -> str:
     return "Good"
 
 #basic module date
-def date():
+def date() -> str:
     return "17.04.2026"
 
 #set arguments
-def depargs():
+def depargs() -> dict:
     return {
         "host": "IPv4 addr"
     }
@@ -23,7 +23,7 @@ from StrFuncs import evnt, err, timenow
 from colorama import Fore, Style
 
 #main function
-def main(ip):
+def main(ip: str) -> str:
     packet = IP(dst=ip)/ICMP()
     resp = sr1(packet, timeout=2, verbose=False)
     if resp:
@@ -34,9 +34,9 @@ def main(ip):
     return "unknown"
 
 #launch func
-def launch(args):
-    target = args.get("host")
+def launch(args: dict) -> None:
+    target = args.get("host", "127.0.0.1")
     print(f"{evnt()} Starting scan on {Fore.CYAN}{target}{Style.RESET_ALL} at {Fore.GREEN}{timenow()}{Style.RESET_ALL}")
-    os = main(target)
-    if os:
-        print(" OS:", os)
+    opersys = main(target)
+    if opersys:
+        print(" OS:", opersys)

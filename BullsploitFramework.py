@@ -14,23 +14,23 @@ import importlib
 from importlib import util
 import subprocess
 
-def turn():
+def turn() -> None:
     input("Press any key to continue...")
 
-def red(text):
+def red(text: str) -> str:
     return Fore.RED + text + Style.RESET_ALL
 
-def white(text):
+def white(text: str) -> str:
     return Fore.WHITE + text + Style.RESET_ALL
 
-def yellow(text):
-    return Fore.yellow + text + Style.RESET_ALL
+def yellow(text: str) -> str:
+    return Fore.YELLOW + text + Style.RESET_ALL
 
 
 animdone = threading.Event()
 stopanim = threading.Event()
 
-def animation():
+def animation() -> None:
     try:
         for i in range(2):
             chars = [".", "..", "...", "   "]
@@ -45,7 +45,7 @@ def animation():
     finally:
         animdone.set()
 
-def check():
+def check() -> None:
     counts = {"payloads": 0, "auxiliary": 0, "post": 0, "builder": 0}
     paths = ["auxiliary", "payloads", "post", "builder"]
     errlog = []
@@ -98,7 +98,7 @@ def check():
         print(f"{err()} {l}")
     
 
-def mainmenu(payloadc, auxiliaryc, postc, builderc):
+def mainmenu(payloadc: int, auxiliaryc: int, postc: int, builderc: int) -> None:
     print(red(f"""
        ,/         \\,
       ((__,-'''-,__))
@@ -115,7 +115,7 @@ def mainmenu(payloadc, auxiliaryc, postc, builderc):
     BSC(payloadc, auxiliaryc, postc, builderc)
     
 class BSC:
-    def __init__(self, payload, auxiliary, post, builder):
+    def __init__(self, payload: int, auxiliary: int, post: int, builder: int) -> None:
         self.post = post
         self.payload = payload
         self.aux = auxiliary
@@ -130,7 +130,7 @@ class BSC:
         self.analyse()
         self.run()
 
-    def parse(self, args=None):
+    def parse(self, args=None) -> dict:
         if not args: return {}
         params = {}
         for i in args:
@@ -142,7 +142,7 @@ class BSC:
 
         
 
-    def analyse(self):
+    def analyse(self) -> None:
         try:
             for folder in self.folders:
                 path = os.path.join("Modules", folder)
@@ -162,7 +162,7 @@ class BSC:
         except Exception as k:
             print(f"{err()} {k}")
 
-    def getmeta(self, path, meta):
+    def getmeta(self, path: str, meta: str) -> str:
         try:
             with open(path, "r", encoding="utf-8") as f:
                 parsed = ast.parse(f.read())
@@ -175,26 +175,26 @@ class BSC:
         except Exception as c:
             return "Read error"
 
-    def getrank(self, path):
+    def getrank(self, path: str) -> str:
         return self.getmeta(path, "rank")
 
-    def getdate(self, path):
+    def getdate(self, path: str) -> str:
         return self.getmeta(path, "date")
 
-    def getdesc(self, path):
+    def getdesc(self, path: str) -> str:
         return self.getmeta(path, "description")
 
 
 
 
-    def clear(self):
+    def clear(self) -> None:
         if os.name == "nt":
             os.system("cls")
         else:
             os.system("clear")
         mainmenu(self.payload, self.aux, self.post, self.builder)
 
-    def table(self, modultype=None):
+    def table(self, modultype=None) -> None:
         try:
             if modultype is None:
                 filtered = self.modules
@@ -225,7 +225,7 @@ class BSC:
             print(f"{err()} {y}")
         
 
-    def run(self):
+    def run(self) -> None:
         try:
             while True:
                 selectmod = f" {Fore.RED}({self.selectmod}){Style.RESET_ALL}" if self.selectmod else ""

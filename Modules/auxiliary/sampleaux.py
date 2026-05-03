@@ -1,18 +1,18 @@
 
 #basic module description
-def description():
+def description() -> str:
     return "Standard auxiliary (Multithread scaner)"
 
 #basic module rank
-def rank():
+def rank() -> str:
     return "Good"
 
 #basic module date
-def date():
+def date() -> str:
     return "08.03.2026"
 
 #set arguments
-def depargs():
+def depargs() -> dict:
     return {
         "host": "IPv4 addr",
         "range": "Port diapasone",
@@ -28,7 +28,7 @@ import json
 import os
 
 #main function
-def main(ip, port, semaphore, services):
+def main(ip: str, port: int, semaphore, services: dict) -> None:
     with semaphore:
         try:
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
@@ -38,11 +38,11 @@ def main(ip, port, semaphore, services):
                 servicename = services.get(str(port), "UNKNOWN")
                 print(f"{Fore.YELLOW}[{Style.RESET_ALL}{timenow()}{Fore.YELLOW}] {Style.RESET_ALL}Port{Fore.CYAN} {port} {Style.RESET_ALL}is opened on service{Fore.GREEN} {servicename}{Style.RESET_ALL}")
             s.close()
-        except:
-            pass
+        except Exception as er:
+            print(f"{err()} {er}")
         
 #launch func
-def launch(args):
+def launch(args: dict) -> None:
     try:
         basepath = os.path.dirname(__file__)
         servpath = os.path.join(basepath, "Services.json")
@@ -55,9 +55,9 @@ def launch(args):
         except Exception as b:
             print(f"{err()} {b}")
             services = {}
-        target = args.get("host")
-        portrange = args.get("range")
-        threadcount = int(args.get("threads", 10))
+        target = args.get("host", "127.0.0.1")
+        portrange = args.get("range", "1-1000")
+        threadcount = int(args.get("threads", 100))
         try:
             startp, endp = map(int, portrange.split("-"))
         except:
@@ -73,5 +73,5 @@ def launch(args):
         for t in threads:
             t.join()
         print(f"{evnt()} Scan successfully finished!")
-    except RuntimeError:
-        pass
+    except Exception as error:
+        print(f"{err()} {error}")
