@@ -109,7 +109,7 @@ def mainmenu(payloadc: int, auxiliaryc: int, postc: int, builderc: int) -> None:
           (6___6)  {Fore.WHITE}{Back.RED}BullSploit{Style.RESET_ALL} {Fore.WHITE}{Back.RED}Framework{Style.RESET_ALL}{Fore.CYAN} dev{Fore.WHITE}#{Fore.CYAN}{ver} {Fore.RED}
            `---` {Style.RESET_ALL}"""))
     print(f"""
-+- --=[ {f"{Fore.YELLOW}https://github.com/ghostemanelxrd123-creator{Style.RESET_ALL}":<43} ]-
++- --=[ {f"{Fore.YELLOW}https://github.com/clearingpool{Style.RESET_ALL}":<53} ]-
 +- --=[ {f"{payloadc} payload - {auxiliaryc} auxiliary - {postc} post - {builderc} builders":<45}]-
 """)
     BSC(payloadc, auxiliaryc, postc, builderc)
