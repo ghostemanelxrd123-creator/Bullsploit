@@ -23,16 +23,18 @@ from StrFuncs import err, evnt, timenow
 import asyncio
 import os, json, time
 from colorama import Fore, Style
-sem = asyncio.Semaphore(1000)
+
 
 #main function
+sem = asyncio.Semaphore(1000)
+
 async def main(host: str, ports: range, services: dict) -> None:
     result = []
     tasks = [portscan(host, p, result, services) for p in ports]
     await asyncio.gather(*tasks)
     print(f"{evnt()} Scan successfully finished! Found ports:{len(result)}")
 
-async def portscan(host, port, result, services) -> None:
+async def portscan(host: str, port: int, result: list, services: dict) -> None:
     async with sem:
         try:
             connect = asyncio.open_connection(host, port)
@@ -45,7 +47,7 @@ async def portscan(host, port, result, services) -> None:
         except: pass
 
 #launch func
-def launch(args) -> None:
+def launch(args: dict) -> None:
     try:
         basepath = os.path.dirname(__file__)
         servpath = os.path.join(basepath, "Services.json")
@@ -58,7 +60,7 @@ def launch(args) -> None:
         except Exception as b:
             print(f"{err()} {b}")
             services = {}
-        target = args.get("host")
+        target = args.get("host", "127.0.0.1")
         portrangeraw = args.get("range", "1-1000")
         try:
             startport, endport = map(int, portrangeraw.split('-'))
@@ -70,4 +72,4 @@ def launch(args) -> None:
         
         
     except Exception as error:
-        print(error)
+        print(f"{err()}{error}")
